@@ -25,15 +25,23 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
         console.log(error);
 
+          for(var i = 0; i < 5; i++) {
 
+            if (tweets[i] == null || tweets[i] == undefined) {
+                break;
+            }
+        console.log ("Tweets");
+        console.log(tweets[i]);
+        console.log(tweets[i].text);
+            
+        }
 
- //Display Tweets
-  for (var i=0; i<tweets.length; i++){
-    console.log("Tweet: " + tweets[i].text);
-  }
+        checkConfirm();
 
+      }
 
-}}
-    
-});
-
+    });
+      
+        
+        
+       
