@@ -1,18 +1,11 @@
-// Require packages 
-
+// Require packages
+console.log("Loaded liri")
 var fs = require('fs')
-
+var inquirer = require('inquirer');
 var Twitter = require('twitter');
 
 
 //  Variable
-
-var tweets = "my-tweets";
-
-// Twitter Function 
-function mytweets () {
-// Code from NPM
-
 var client = new Twitter({
     consumer_key: 'squkevbrnU5h92cziqUbETnOO',
     consumer_secret: 'egpuEQG8oXmYsKhxaCXDxsz0i1mt7XNzWySHgyAqsOBu5p55pv',
@@ -20,28 +13,35 @@ var client = new Twitter({
     access_token_secret: 'txfn4IlBwPqMmFuoFQLQCFYCQ8zGOsQ3uvBCAhXvXKHfP'
 });
 
-var params = { screen_name: 'Sword' };
+// Twitter Function
+function mytweets() {
+// Code from NPM
+
+
+
+var params = { screen_name: 'Toolwatcher' };
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
-        console.log(error);
-
           for(var i = 0; i < 5; i++) {
 
             if (tweets[i] == null || tweets[i] == undefined) {
-                break;
+                continue;
             }
         console.log ("Tweets");
         console.log(tweets[i]);
         console.log(tweets[i].text);
-            
+
         }
 
-        checkConfirm();
 
       }
-
+    console.log(error);
     });
-      
-        
 }
-       
+
+mytweets();
+//inquirer.prompt([{
+//}]).then(function (answers) {
+    // Use user feedback for... whatever!!
+//});
+
