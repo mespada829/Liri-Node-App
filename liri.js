@@ -19,7 +19,7 @@ function mytweets() {
 
 
 
-var params = { screen_name: 'Toolwatcher' };
+var params = { screen_name: 'Sword' };
 client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
           for(var i = 0; i < 5; i++) {
